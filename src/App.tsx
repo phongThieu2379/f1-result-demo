@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Router } from "react-router-dom";
 import "./App.css";
 import HomePage from "./Page/HomePage/HomePage";
 import Layout from "./Layout/Layout";
@@ -12,42 +12,42 @@ import SearchDetailTeam from "./Page/HomePage/SearchDetail/SearchDetailTeam";
 
 function App() {
   return (
-    <div>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/homepage" element={<Layout Component={HomePage} />} />
-          <Route
-            path="/homepage/search-nav/races/:year"
-            element={<Layout Component={SearchYearRace} />}
-          />
-          <Route
-            path="/homepage/search-nav/races/:year/:detail"
-            element={<Layout Component={SearchDetailRace} />}
-          />
-          <Route
-            path="/homepage/search-nav/drivers/:year"
-            element={<Layout Component={SearchYearDriver} />}
-          />
-          <Route
-            path="/homepage/search-nav/drivers/:year/:detail"
-            element={<Layout Component={SearchDetailDriver} />}
-          />
-          <Route
-            path="/homepage/search-nav/teams/:year"
-            element={<Layout Component={SearchYearTeam} />}
-          />
-          <Route
-            path="/homepage/search-nav/teams/:year/:detail"
-            element={<Layout Component={SearchDetailTeam} />}
-          />
-          <Route
-            path="/homepage/search-nav/fastest-lap/:year"
-            element={<Layout Component={SearchYearFastestLap} />}
-          />
-          
-        </Routes>
-      </BrowserRouter>
-    </div>
+      <div>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/homepage" element={<Layout Component={HomePage} />} />
+            <Route
+              path="/homepage/search-nav/races/:year"
+              element={<Layout Component={SearchYearRace} />}
+            />
+            <Route
+              path="/homepage/search-nav/races/:year/:detail"
+              element={<Layout Component={SearchDetailRace} />}
+            />
+            <Route
+              path="/homepage/search-nav/drivers/:year"
+              element={<Layout Component={SearchYearDriver} />}
+            />
+            <Route
+              path="/homepage/search-nav/drivers/:year/:detail"
+              element={<Layout Component={SearchDetailDriver} />}
+            />
+            <Route
+              path="/homepage/search-nav/teams/:year"
+              element={<Layout Component={SearchYearTeam} />}
+            />
+            <Route
+              path="/homepage/search-nav/teams/:year/:detail"
+              element={<Layout Component={SearchDetailTeam} />}
+            />
+            <Route
+              path="/homepage/search-nav/fastest-lap/:year"
+              element={<Layout Component={SearchYearFastestLap} />}
+            />
+      
+          </Routes>
+        </BrowserRouter>
+      </div>
   );
 }
 
