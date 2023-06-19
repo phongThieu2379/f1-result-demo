@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Router } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import HomePage from "./Page/HomePage/HomePage";
 import Layout from "./Layout/Layout";
@@ -13,7 +13,7 @@ import SearchDetailTeam from "./Page/HomePage/SearchDetail/SearchDetailTeam";
 function App() {
   return (
       <div>
-        <BrowserRouter>
+        <BrowserRouter basename="/homepage">
           <Routes>
             <Route path="/homepage" element={<Layout Component={HomePage} />} />
             <Route
