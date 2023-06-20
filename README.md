@@ -12,6 +12,12 @@ https://phongthieu2379.github.io/f1-result-demo/homepage
 In case you want to make some change, you can also redeploy the updates with gh pages by run the command `npm run deploy`
 
 
+
+
+
+
+
+-------------------------------------------------------------------------------------------
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
