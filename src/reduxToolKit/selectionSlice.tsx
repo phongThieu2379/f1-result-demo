@@ -2,9 +2,9 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   selectedYear: 2023,
-  selectedCategory: "races",
-  selectedInfor: "all",
-  childActiveKey: "races",
+  selectedCategory: "",
+  selectedInfor: "",
+  childActiveKey: "",
 };
 export interface I_State {
   selectedYear: number;

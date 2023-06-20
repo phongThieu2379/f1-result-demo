@@ -8,10 +8,13 @@ interface LayoutProps {
 }
 export default function Layout({ Component }: LayoutProps) {
   return (
-    <div>
+    <div style={{ backgroundColor: "rgb(247,244,241)" }}>
       <Header />
-      <SearchNav/>
-      <Component />
+      <SearchNav />
+      <div className="container mx-auto table-main px-6">
+        <Component />
+      </div>
+
       <Footer />
     </div>
   );

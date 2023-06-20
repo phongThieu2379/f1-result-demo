@@ -30,8 +30,9 @@ export default function SearchNav() {
     });
   };
   return (
-    <div>
-      <Tabs
+    <div className=" mt-10 pt-5 container mx-auto bg-white font-face-f1">
+      <Tabs 
+        style={{height:300 }}
         onChange={handleSelectYear}
         defaultActiveKey="1"
         tabPosition={"left"}

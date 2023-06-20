@@ -7,6 +7,7 @@ import { Provider } from "react-redux";
 import { configureStore } from "@reduxjs/toolkit";
 import selectionSlice from "./reduxToolKit/selectionSlice";
 
+
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );

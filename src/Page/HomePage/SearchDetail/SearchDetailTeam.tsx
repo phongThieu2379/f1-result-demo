@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { RootState } from "../../..";
 import { teamDataTable } from "../../../Resource/Data/Team/teamDataTable";
 import { I_DataTeamName } from "../../../Resource/Interface/interfaceData";
+import { Table } from "antd";
 export default function SearchDetailTeam() {
   let { detail } = useParams();
   let { selectedYear } = useSelector((state: RootState) => {
@@ -21,34 +22,35 @@ export default function SearchDetailTeam() {
   });
   let [tableData, setTableData] = useState<I_DataTeamName[]>([]);
   useEffect(() => {
-    setTableData(data[tableIndex].data);
+    let cloneTable = data[tableIndex].data;
+    setTableData(cloneTable);
   }, [detail]);
 
-  const renderTable = () => {
-    return tableData.map((item) => {
-      return (
-        <tr>
-          <td>{item.grandPrix}</td>
-          <td>{item.date}</td>
-          <td>{item.points}</td>
-        </tr>
-      );
-    });
-  };
+  const columns = [
+    {
+      title: "Grand Prix",
+      dataIndex: "grandPrix",
+      key: "grandPrix",
+    },
+    {
+      title: "Date",
+      dataIndex: "date",
+      key: "date",
+    },
+    {
+      title: <abbr title="Points">PTS</abbr>,
+      dataIndex: "points",
+      key: "points",
+    },
+  ];
+  let teamName = detail?.replace(/_/g, " ");
   return (
     <div>
-      <thead>
-        <tr>
-          <th>
-           Grand Prix
-          </th>
-          <th>Date</th>
-          <th>
-            <abbr title="Points">PTS</abbr>
-          </th>
-        </tr>
-      </thead>
-      <tbody>{renderTable()}</tbody>
+      <h1 className="pb-10 font-semibold text-5xl	 ">
+        {selectedYear} Constructor Standings :{" "}
+        <span className="capitalize">{teamName}</span>
+      </h1>
+      <Table dataSource={tableData} columns={columns} />
     </div>
   );
 }

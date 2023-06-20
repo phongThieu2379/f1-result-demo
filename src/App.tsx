@@ -13,7 +13,7 @@ import SearchDetailTeam from "./Page/HomePage/SearchDetail/SearchDetailTeam";
 function App() {
   return (
       <div>
-        <BrowserRouter basename="/homepage">
+        <BrowserRouter basename="/f1-result-demo">
           <Routes>
             <Route path="/homepage" element={<Layout Component={HomePage} />} />
             <Route

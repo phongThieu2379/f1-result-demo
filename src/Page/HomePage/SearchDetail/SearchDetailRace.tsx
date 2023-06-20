@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { RootState } from "../../..";
 import { raceByLocationTable } from "../../../Resource/Data/RaceData/raceByLocationTable";
 import { I_DataRace } from "../../../Resource/Interface/interfaceData";
+import { Table } from "antd";
 
 export default function SearchDetailRace() {
   let { detail } = useParams();
@@ -16,45 +17,53 @@ export default function SearchDetailRace() {
   // data : data at the index year
   let data = raceByLocationTable[index].data;
 
-  // tableIndex at the id from params
+  // tableIndex at the id from params (choos race)
   let tableIndex = data.findIndex((item) => {
     return item.locationId == detail;
   });
   let [tableData, setTableData] = useState<I_DataRace[]>([]);
   useEffect(() => {
-    setTableData(data[tableIndex].data);
+    let cloneTable = data[tableIndex].data;
+    setTableData(cloneTable);
   }, [detail]);
 
-  const renderTable = () => {
-    return tableData.map((item) => {
-      return (
-        <tr>
-          <td>{item.pos}</td>
-          <td>{item.driver}</td>
-          <td>{item.laps}</td>
-          <td>{item.time}</td>
-          <td>{item.points}</td>
-        </tr>
-      );
-    });
-  };
+  const columns = [
+    {
+      title: <abbr title="Position">POS</abbr>,
+      dataIndex: "pos",
+      key: "pos",
+    },
+    {
+      title: "Driver",
+      dataIndex: "driver",
+      key: "driver",
+    },
+    {
+      title: "Team",
+      dataIndex: "team",
+      key: "team",
+    },
+    {
+      title: "Laps",
+      dataIndex: "laps",
+      key: "laps",
+    },
+    {
+      title: "Time",
+      dataIndex: "time",
+      key: "time",
+    },
+    {
+      title: <abbr title="Points">PTS</abbr>,
+      dataIndex: "points",
+      key: "points",
+    },
+  ];
   return (
     <div>
-      <thead>
-        <tr>
-          <th>
-            <abbr title="Position">Pos</abbr>
-          </th>
-          <th>Driver</th>
+      <h1 className="pb-10 font-semibold text-4xl	 ">FORMULA 1 <span className="uppercase">{data[tableIndex].location}</span> GRAND PRIX 2023 - RACE RESULT</h1>
 
-          <th>Laps</th>
-          <th>Time</th>
-          <th>
-            <abbr title="Points">PTS</abbr>
-          </th>
-        </tr>
-      </thead>
-      <tbody>{renderTable()}</tbody>
+      <Table dataSource={tableData} columns={columns} />
     </div>
   );
 }

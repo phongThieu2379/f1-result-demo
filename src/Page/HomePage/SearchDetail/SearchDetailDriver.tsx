@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { RootState } from "../../..";
 import { driverDataTable } from "../../../Resource/Data/DriverData/driverDataTable";
 import { I_DataDriver } from "../../../Resource/Interface/interfaceData";
+import { Table } from "antd";
 
 export default function SearchDetailDriver() {
   let { detail } = useParams();
@@ -16,43 +17,51 @@ export default function SearchDetailDriver() {
   // data : data at the index year
   let data = driverDataTable[index].data;
 
-  // tableIndex at the id from params
+  // tableIndex at the id from params (choose driver)
   let tableIndex = data.findIndex((item) => {
     return item.driver == detail;
   });
   let [tableData, setTableData] = useState<I_DataDriver[]>([]);
   useEffect(() => {
-    setTableData(data[tableIndex].data);
+    let cloneTable = data[tableIndex].data;
+    setTableData(cloneTable);
   }, [detail]);
 
-  const renderTable = () => {
-    return tableData.map((item) => {
-      return (
-        <tr>
-          <td>{item.grandPrix}</td>
-          <td>{item.date}</td>
-          <td>{item.car}</td>
-          <td>{item.racePosition}</td>
-          <td>{item.points}</td>
-        </tr>
-      );
-    });
-  };
+  const columns = [
+    {
+      title: "Grand Prix",
+      dataIndex: "grandPrix",
+      key: "grandPrix",
+    },
+    {
+      title: "Date",
+      dataIndex: "date",
+      key: "date",
+    },
+    {
+      title: "Car",
+      dataIndex: "car",
+      key: "car",
+    },
+    {
+      title: "Race Position",
+      dataIndex: "racePosition",
+      key: "racePosition",
+    },
+    {
+      title: <abbr title="Points">PTS</abbr>,
+      dataIndex: "points",
+      key: "points",
+    },
+  ];
+  let driverName = detail?.replace("-", " ");
   return (
     <div>
-      <thead>
-        <tr>
-          <th>Grand prix</th>
-          <th>Date</th>
-
-          <th>Car</th>
-          <th>Race Position</th>
-          <th>
-            <abbr title="Points">PTS</abbr>
-          </th>
-        </tr>
-      </thead>
-      <tbody>{renderTable()}</tbody>
+      <h1 className="pb-10 font-semibold text-5xl	 ">
+        {selectedYear} Driver Standings :{" "}
+        <span className="capitalize">{driverName}</span>
+      </h1>
+      <Table dataSource={tableData} columns={columns} />
     </div>
   );
 }

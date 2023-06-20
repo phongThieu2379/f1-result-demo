@@ -90,11 +90,10 @@ export default function InforContent() {
         let newName = "";
         if (item.location.includes("-")) {
           newName =
-            item.location.replace(/-/g, " ").toUpperCase() +
-            " " +
-            item.locationId;
+            item.location.replace(/-/g, " ").toUpperCase() 
+            
         } else {
-          newName = item.location.toUpperCase() + " " + item.locationId;
+          newName = item.location.toUpperCase() 
         }
         return (
           <h2>
@@ -152,7 +151,7 @@ export default function InforContent() {
   };
   return (
     <div>
-      <div className="detail-infor">{renderListContent()}</div>
+      <div style={{ height: 300 }} className="detail-infor  overflow-y-scroll">{renderListContent()}</div>
     </div>
   );
 }

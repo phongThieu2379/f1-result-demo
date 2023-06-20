@@ -2,7 +2,69 @@
 @tailwind components;
 @tailwind utilities;
 
-.detail-infor button.selected {
-    text-decoration: underline red 1px;
-  }
+* {
+  box-sizing: border-box;
+  margin: 0px;
+}
+/* start tab design */
+.ant-tabs {
+  font-family: "Lato", sans-serif;
+  font-size: medium !important;
+}
 
+.ant-tabs-tabpane {
+  padding-left: 4px !important;
+}
+.ant-tabs-tab {
+  transition: all 0.3s !important;
+  margin-top: 0 !important
+  ;
+}
+/* set witdh of each column */
+.ant-tabs-nav-list {
+  width: 240px;
+}
+.ant-tabs-tab.ant-tabs-tab-active {
+  background-color: gray !important;
+}
+.ant-tabs-tab-btn {
+  font-size: medium !important;
+  font-weight: 500;
+}
+
+.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: aliceblue !important;
+}
+.ant-tabs .ant-tabs-ink-bar {
+  background: none !important
+  ;
+}
+.ant-tabs .ant-tabs-tab:hover {
+  color: black;
+}
+.ant-tabs .ant-tabs-tab:hover button {
+  text-decoration: underline;
+}
+.detail-infor button {
+  padding: 8px 24px;
+  width: 100%;
+  text-align: left;
+}
+.detail-infor button.selected {
+  background-color: gray !important;
+  color: white;
+}
+.detail-infor h2:hover button {
+  text-decoration: underline;
+}
+/* end search nav */
+
+/* table-main */
+.table-main {
+  background-color: white;
+  margin-top: 8px;
+}
+.table-main div thead{
+  width: 100%;
+}
+/* end table-main */
