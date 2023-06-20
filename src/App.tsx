@@ -9,10 +9,12 @@ import SearchYearDriver from "./Page/HomePage/SearchByYear/SearchYearDriver/Sear
 import SearchDetailRace from "./Page/HomePage/SearchDetail/SearchDetailRace";
 import SearchDetailDriver from "./Page/HomePage/SearchDetail/SearchDetailDriver";
 import SearchDetailTeam from "./Page/HomePage/SearchDetail/SearchDetailTeam";
+import Spinner from "./Component/Spinner/Spinner";
 
 function App() {
   return (
       <div>
+        <Spinner/>
         <BrowserRouter basename="/f1-result-demo">
           <Routes>
             <Route path="/homepage" element={<Layout Component={HomePage} />} />

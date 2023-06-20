@@ -6,7 +6,7 @@ const initialState = {
   selectedInfor: "",
   childActiveKey: "",
 };
-export interface I_State {
+export interface I_UserSliceState {
   selectedYear: number;
   selectedCategory: string;
   selectedInfor: string;

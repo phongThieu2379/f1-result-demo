@@ -17,6 +17,7 @@ import { selectInforAction } from "../../reduxToolKit/selectionSlice";
 import { raceByLocationTable } from "../../Resource/Data/RaceData/raceByLocationTable";
 import { lapByYearTable } from "../../Resource/Data/FastesLap/lapByYearTable";
 import { useNavigate } from "react-router-dom";
+import { setLoadingOffAction, setLoadingOnAction } from "../../reduxToolKit/spinnerSlice";
 export default function InforContent() {
   let { selectedYear, selectedCategory } = useSelector((state: RootState) => {
     return state.selectionSlice;
@@ -51,6 +52,7 @@ export default function InforContent() {
   let navigate= useNavigate()
   // select detail
   let handleSelectInfor = (item: string) => {
+    dispatch(setLoadingOnAction());
     dispatch(selectInforAction(item));
     setSelectedButton(item);
     let index = listInfor.findIndex((item) => item.year == selectedYear);
@@ -79,7 +81,9 @@ export default function InforContent() {
       case "fastest-lap":
         break;
     }
-    console.log(item, indexTable);
+    setTimeout(() => {
+      dispatch(setLoadingOffAction());
+    }, 200);
   };
   const renderListContent = () => {
     let index = listInfor.findIndex((item) => item.year == selectedYear);

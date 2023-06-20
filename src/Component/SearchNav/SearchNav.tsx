@@ -9,16 +9,24 @@ import {
   selectYearAction,
 } from "../../reduxToolKit/selectionSlice";
 import { useNavigate } from "react-router-dom";
+import {
+  setLoadingOffAction,
+  setLoadingOnAction,
+} from "../../reduxToolKit/spinnerSlice";
 
 export default function SearchNav() {
   let dispatch = useDispatch();
   const handleSelectYear = (year: string) => {
+    dispatch(setLoadingOnAction());
     dispatch(selectYearAction(year));
-    dispatch(selectChildActiveKeyAction("races"))
+    dispatch(selectChildActiveKeyAction("races"));
     dispatch(selectCategoryAction("races"));
-    navigate(`/homepage/search-nav/races/${year}`)
+    navigate(`/homepage/search-nav/races/${year}`);
+    setTimeout(() => {
+      dispatch(setLoadingOffAction());
+    }, 300);
   };
-  let navigate = useNavigate()
+  let navigate = useNavigate();
 
   const renderContent = () => {
     return yearList.map((year) => {
@@ -31,8 +39,8 @@ export default function SearchNav() {
   };
   return (
     <div className=" mt-10 pt-5 container mx-auto bg-white font-face-f1">
-      <Tabs 
-        style={{height:300 }}
+      <Tabs
+        style={{ height: 300 }}
         onChange={handleSelectYear}
         defaultActiveKey="1"
         tabPosition={"left"}

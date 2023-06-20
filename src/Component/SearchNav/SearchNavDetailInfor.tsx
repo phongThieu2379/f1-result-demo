@@ -9,6 +9,7 @@ import {
 } from "../../reduxToolKit/selectionSlice";
 import { RootState } from "../..";
 import { useNavigate } from "react-router-dom";
+import { setLoadingOffAction, setLoadingOnAction } from "../../reduxToolKit/spinnerSlice";
 
 export default function SearchNavDetailInfor() {
   let { childActiveKey } = useSelector((state: RootState) => {
@@ -21,9 +22,13 @@ export default function SearchNavDetailInfor() {
   let navigate = useNavigate();
 
   const handleSelectCategory = (category: string) => {
+    dispatch(setLoadingOnAction());
     dispatch(selectCategoryAction(category));
     dispatch(selectChildActiveKeyAction(category));
     navigate(`/homepage/search-nav/${category}/${selectedYear}`)
+    setTimeout(() => {
+      dispatch(setLoadingOffAction());
+    }, 300);
   };
   const renderContent = () => {
     return categoryList.map((category) => {
