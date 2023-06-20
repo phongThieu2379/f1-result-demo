@@ -1,4 +1,14 @@
+# Description for the APP
 
+This app is the look up for the information of F1 Racing result
+User can start by choosing the year of information, then choose the category of information required to lookup (race, driver, team, fastest lap), then if have some detail, can continue to search for the detail
+
+# Deployment for APP
+
+Web application have already been deployed with the latest version in the link below:
+https://phongthieu2379.github.io/f1-result-demo/homepage
+
+In case you want to make some change, you can also redeploy the updates with gh pages by run the command `npm run deploy`
 
 
 # Getting Started with Create React App
