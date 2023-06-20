@@ -1,15 +1,17 @@
 {
   "files": {
-    "main.css": "/f1-result-demo/static/css/main.2da6d9bb.css",
-    "main.js": "/f1-result-demo/static/js/main.2c8d6a17.js",
+    "main.css": "/f1-result-demo/static/css/main.4bdbad49.css",
+    "main.js": "/f1-result-demo/static/js/main.ff37c5ee.js",
     "static/js/787.bd0a7312.chunk.js": "/f1-result-demo/static/js/787.bd0a7312.chunk.js",
+    "static/media/google-play-badge.png": "/f1-result-demo/static/media/google-play-badge.6405feb60a42507bface.png",
+    "static/media/download-on-the-app-store-apple.png": "/f1-result-demo/static/media/download-on-the-app-store-apple.da15054de8927b3cf424.png",
     "index.html": "/f1-result-demo/index.html",
-    "main.2da6d9bb.css.map": "/f1-result-demo/static/css/main.2da6d9bb.css.map",
-    "main.2c8d6a17.js.map": "/f1-result-demo/static/js/main.2c8d6a17.js.map",
+    "main.4bdbad49.css.map": "/f1-result-demo/static/css/main.4bdbad49.css.map",
+    "main.ff37c5ee.js.map": "/f1-result-demo/static/js/main.ff37c5ee.js.map",
     "787.bd0a7312.chunk.js.map": "/f1-result-demo/static/js/787.bd0a7312.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2da6d9bb.css",
-    "static/js/main.2c8d6a17.js"
+    "static/css/main.4bdbad49.css",
+    "static/js/main.ff37c5ee.js"
   ]
 }
