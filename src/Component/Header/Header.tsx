@@ -42,7 +42,7 @@ export default function Header() {
           >
             <ul className="font-medium flex flex-col  rounded md:flex-row md:mt-0 md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
               <li className="block py-2 pl-3 pr-4 md:px-5 text-white md:rounded-none md:flex md:items-center  rounded hover:bg-gray-800 md:border-0 md:hover:bg-gray-800 md:p-0 dark:text-white md:dark:hover:text-white-500 dark:hover:bg-gray-800 dark:hover:text-white md:dark:hover:bg-transparent transition-all ease-linear md:h-14 ">
-                <a target="_blank" href="/f1-result-demo/homepage" aria-current="page" >
+                <a href="/f1-result-demo/homepage" aria-current="page" >
                   Home
                 </a>
               </li>
