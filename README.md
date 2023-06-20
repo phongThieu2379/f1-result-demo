@@ -2,6 +2,7 @@
 
 This app is the look up for the information of F1 Racing result
 User can start by choosing the year of information, then choose the category of information required to lookup (race, driver, team, fastest lap), then if have some detail, can continue to search for the detail
+Also have side link feature on the nav incase user want to go to the main page of F1  
 
 # Deployment for APP
 
